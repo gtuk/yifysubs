@@ -1,0 +1,25 @@
+{
+    "name": "yifysubs",
+    "version": "0.0.1",
+    "description": "Node.js yify subtitles API",
+    "main": "yify.js",
+    "keywords": [
+        "yify",
+        "subtitles",
+        "yifysubs",
+        "movie"
+    ],
+    "author": {
+        "name": "gtuk"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/gtuk/yifysubs.git"
+    },
+    "homepage": "https://github.com/gtuk/yifysubs.git",
+    "license": "ISC",
+    "dependencies": {
+        "request": "~2.40.0",
+        "underscore": "~1.7.0"
+    }
+}
