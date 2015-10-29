@@ -4,14 +4,20 @@ var _ = require('underscore');
 var url = 'http://api.yifysubtitles.com/subs/';
 
 function searchSubtitles(lang, query, callback) {
+
     lang = lang.toLowerCase();
+
     if (query instanceof Array) {
         query = query.join('-');
     }
+    
     request({url:url+query, json: true}, function(error, response, data){
+
         if( lang == 'all' ) {
+
+            var subtitles = {};
+
             _.each(data.subs, function(languages) {
-                var subtitles = {};
                 _.each(languages, function(subs, language) {
                     var subtitle = {};
                     subtitle.language = language;
@@ -19,11 +25,16 @@ function searchSubtitles(lang, query, callback) {
                     subtitles[language] = subtitle;
 
                 });
-                callback(subtitles);
             });
+     
+            callback(subtitles);
+
         }
+
         else if( lang != 'all' && lang !== '' ) {
+
             _.each(data.subs, function(languages) {
+
                 if( lang in languages ) {
                     var subtitles = {};
                     var subtitle = {};
@@ -33,9 +44,13 @@ function searchSubtitles(lang, query, callback) {
                     subtitles[lang] = subtitle;
                     callback(subtitles);
                 }
+
             });
+
         }
+
     });
+
 }
 
 exports.searchSubtitles = searchSubtitles;
