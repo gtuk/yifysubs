@@ -1,6 +1,6 @@
 {
     "name": "yifysubs",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Node.js yify subtitles API",
     "main": "yify.js",
     "keywords": [
@@ -19,7 +19,7 @@
     "homepage": "https://github.com/gtuk/yifysubs.git",
     "license": "ISC",
     "dependencies": {
-        "request": "~2.40.0",
-        "underscore": "~1.7.0"
+        "request": "~2.67.0",
+        "underscore": "~1.8.3"
     }
 }
